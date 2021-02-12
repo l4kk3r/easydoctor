@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Записаться</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="root">
+      <form class="" action="" method="post">
+        {% csrf_token %}
+        <h3>Записаться к врачу теперь стало просто как никогда!</h3>
+        <div class="form-group">
+          <label>Доктор:</label>
+          {{ form.doctor }}
+        </div>
+        <div class="form-group">
+          <label>Время:</label>
+          {{ form.time }}
+        </div>
+        <input type='submit' class='btn btn-secondary' value='Записаться'/>
+      </form>
+    </div>
+  </body>
+  <style>
+    body {
+      padding: 40px;
+    }
+  </style>
+</html>

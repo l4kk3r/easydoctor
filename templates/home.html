@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="root">
+      <h1>EasyDoctor</h1>
+      <h3>Запись к врачу за два клика!</h3>
+      <div class="buttons-wrapper">
+        <div class='buttons-div'>
+          <a class='btn btn-primary' href='{% url "loginPage" %}'>Войти</a>
+          <a class='btn btn-warning' href='{% url "registerPage" %}'>Зарегистрироваться</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      padding: 40px;
+    }
+    h1 {
+      color: #007bff;
+      text-align: center;
+    }
+    h3 {
+      text-align: center;
+    }
+    .buttons-div {
+      display: inline-block;
+    }
+    .buttons-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+  </style>
+</html>
