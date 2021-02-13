@@ -24,7 +24,7 @@ SECRET_KEY = '&*ba16quaf4uwkr34#gp8w*2o0g9-#&uzwbz0)yh*=n%(vj234'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['easydoctor-test.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['easydoctorr.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
