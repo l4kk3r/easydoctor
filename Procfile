@@ -1,1 +1,1 @@
-web: gunicorn DoctorProject.wsgi --log-file -
+web: gunicorn DoctorProject.wsgi
