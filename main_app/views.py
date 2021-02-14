@@ -12,11 +12,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Record
 # Create your views here.
+@login_required(login_url='loginPage')
 def profilePage(request):
     records = Record.objects.filter(patient=request.user)
     return render(request, 'profile.html', {'records': records})
 
 def registerPage(request):
+    if request.user.is_authenticated:
+        return redirect('profilePage')
+
     form = CreateUserForm()
 
     if request.method == 'POST':
@@ -31,6 +35,9 @@ def registerPage(request):
     return render(request, 'register.html', {'form': form})
 
 def loginPage(request):
+    if request.user.is_authenticated:
+        return redirect('profilePage')
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -47,10 +54,12 @@ def loginPage(request):
 
     return render(request, 'login.html')
 
+@login_required(login_url='loginPage')
 def logoutUser(request):
     logout(request)
     return redirect('loginPage')
 
+@login_required(login_url='loginPage')
 def createPage(request):
     form = CreateNewRecord()
 
@@ -68,6 +77,9 @@ def createPage(request):
     return render(request, 'create.html', {'form': form})
 
 def homePage(request):
+    if request.user.is_authenticated:
+        return redirect('profilePage')
+
     return render(request, 'home.html')
 @csrf_exempt
 def telegramAddRecord(request):
