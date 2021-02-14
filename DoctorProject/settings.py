@@ -72,11 +72,14 @@ WSGI_APPLICATION = 'DoctorProject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'da3gg0j2sq5b7m',
+        'HOST': 'ec2-50-19-171-158.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'tcpefbiiuqwmky',
+        'PASSWORD': 'a2ce52b215769971c6e5982dde8b009c39d2b82fc087c6dee18fa96e1ed082d4'
     }
 }
 
