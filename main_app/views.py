@@ -91,6 +91,9 @@ def telegramAddRecord(request):
         username = request.POST.get('username')
         doctor = request.POST.get('doctor')
         time = request.POST.get('time')
+        ex_record = Record.objects.filter(doctor=doctor, time=time)
+        if ex_record:
+            return HttpResponse("Данная запись уже существует")
         myuser = User.objects.get(username=username)
         new_record = Record(patient=myuser, doctor=doctor, time=time)
         new_record.save()
