@@ -20,6 +20,11 @@
         </div>
         <input type='submit' class='btn btn-secondary' value='Записаться'/>
       </form>
+
+      {% for message in messages %}
+          <p id='message'>{{ message }}</p>
+      {% endfor %}
+
     </div>
   </body>
   <style>
