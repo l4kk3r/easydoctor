@@ -66,6 +66,10 @@ def createPage(request):
     if request.method == 'POST':
         form = CreateNewRecord(request.POST)
         if form.is_valid():
+            ex_record = Record.objects.get(doctor=request.POST.get("doctor"), time=request.POST.get("time"))
+            if ex_record:
+                messages.info(request, 'Запись к данному доктору на указанное время уже существует.')
+                return render(request, 'create.html', {'form': form})
             instance = form.save(commit=False)
             instance.patient = request.user
             instance.save()
